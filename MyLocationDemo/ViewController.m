@@ -12,9 +12,13 @@
 
 @end
 
-@implementation ViewController {
-    CLLocationManager *locationManager;
+@implementation ViewController{
+    CLGeocoder *geoCoder;
+    CLPlacemark *placemark;
 }
+
+
+@synthesize locationManager;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,6 +26,8 @@
     locationManager = [[CLLocationManager alloc] init];
     [locationManager requestAlwaysAuthorization];
     [locationManager requestWhenInUseAuthorization];
+    
+    geoCoder = [[CLGeocoder alloc]init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,6 +61,22 @@
         self.longitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
         self.latitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
     }
+    
+    [locationManager stopUpdatingLocation];
+    //Resolving the address
+    [geoCoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
+        if (error == nil && [placemarks count] > 0) {
+            placemark = [placemarks lastObject];
+            self.addressLabel.text = [NSString stringWithFormat:@"%@ %@\n%@ %@\n%@\n%@",
+                                 placemark.subThoroughfare, placemark.thoroughfare,
+                                 placemark.postalCode, placemark.locality,
+                                 placemark.administrativeArea,
+                                 placemark.country];
+        } else {
+            NSLog(@"%@", error.debugDescription);
+        }
+    }];
 }
 
 

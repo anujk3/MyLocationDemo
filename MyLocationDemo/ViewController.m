@@ -20,6 +20,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     locationManager = [[CLLocationManager alloc] init];
+    [locationManager requestAlwaysAuthorization];
+    [locationManager requestWhenInUseAuthorization];
 }
 
 - (void)didReceiveMemoryWarning {

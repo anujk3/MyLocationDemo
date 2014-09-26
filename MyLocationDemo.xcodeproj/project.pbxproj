@@ -14,6 +14,7 @@
 		6543D85C19D583AA00AFA738 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6543D85B19D583AA00AFA738 /* Images.xcassets */; };
 		6543D85F19D583AA00AFA738 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6543D85D19D583AA00AFA738 /* LaunchScreen.xib */; };
 		6543D86B19D583AA00AFA738 /* MyLocationDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6543D86A19D583AA00AFA738 /* MyLocationDemoTests.m */; };
+		6543D87519D590B300AFA738 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6543D87419D590B300AFA738 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		6543D86419D583AA00AFA738 /* MyLocationDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyLocationDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6543D86919D583AA00AFA738 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6543D86A19D583AA00AFA738 /* MyLocationDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyLocationDemoTests.m; sourceTree = "<group>"; };
+		6543D87419D590B300AFA738 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6543D87519D590B300AFA738 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +66,7 @@
 		6543D84219D583A900AFA738 = {
 			isa = PBXGroup;
 			children = (
+				6543D87419D590B300AFA738 /* CoreLocation.framework */,
 				6543D84D19D583AA00AFA738 /* MyLocationDemo */,
 				6543D86719D583AA00AFA738 /* MyLocationDemoTests */,
 				6543D84C19D583AA00AFA738 /* Products */,
